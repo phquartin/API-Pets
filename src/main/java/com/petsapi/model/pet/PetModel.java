@@ -16,7 +16,7 @@ public class PetModel {
 
     private PetTipo tipo;
 
-    private char sexo;
+    private PetSexo sexo;
 
     private int idade;
 
@@ -26,7 +26,7 @@ public class PetModel {
 
     private String raca;
 
-    public PetModel(long id, String nome, String sobrenome, PetTipo tipo, char sexo, int idade, double peso, String endereco, String raca) {
+    public PetModel(long id, String nome, String sobrenome, PetTipo tipo, PetSexo sexo, int idade, double peso, String endereco, String raca) {
         this.id = id;
         this.nome = nome;
         this.sobrenome = sobrenome;
@@ -71,11 +71,11 @@ public class PetModel {
         this.tipo = tipo;
     }
 
-    public char getSexo() {
+    public PetSexo getSexo() {
         return sexo;
     }
 
-    public void setSexo(char sexo) {
+    public void setSexo(PetSexo sexo) {
         this.sexo = sexo;
     }
 
