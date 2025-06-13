@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 @Table(name = "Perguntas")
 public class PerguntaModel {
     @Id
-    private long id;
+    private Long id;
 
     private String pergunta;
 
