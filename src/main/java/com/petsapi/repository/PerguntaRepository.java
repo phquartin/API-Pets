@@ -1,4 +1,6 @@
 package com.petsapi.repository;
 
-public interface PerguntaRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PerguntaRepository extends JpaRepository<PerguntaRepository, Long> {
 }
