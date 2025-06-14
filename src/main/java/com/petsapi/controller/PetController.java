@@ -4,12 +4,14 @@ import com.petsapi.dto.pet.PetDTO;
 import com.petsapi.dto.pet.PetResponseDTO;
 import com.petsapi.service.PetService;
 import jakarta.validation.Valid;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/pet")
+@Validated
 public class PetController {
 
     private final PetService petService;
