@@ -1,9 +1,12 @@
 package com.petsapi.controller;
 
 import com.petsapi.dto.pet.PetDTO;
+import com.petsapi.dto.pet.PetResponseDTO;
 import com.petsapi.service.PetService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/pet")
@@ -19,6 +22,15 @@ public class PetController {
 
         petService.save(petDTO);
 
+    }
+
+    @GetMapping("/all")
+    public List<PetResponseDTO> getAll() {
+        return petService.getAll();
+    }
+    @GetMapping("/id/{id}")
+    public PetResponseDTO getPetById(@PathVariable Long id) {
+        return petService.getById(id);
     }
 
 }
