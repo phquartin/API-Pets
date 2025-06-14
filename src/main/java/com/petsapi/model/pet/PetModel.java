@@ -14,8 +14,10 @@ public class PetModel {
 
     private String sobrenome;
 
+    @Enumerated(EnumType.STRING)
     private PetTipo tipo;
 
+    @Enumerated(EnumType.STRING)
     private PetSexo sexo;
 
     private int idade;
