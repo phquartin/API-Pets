@@ -1,4 +1,4 @@
-package com.petsapi.model.pergunta;
+package com.petsapi.local.model.pergunta;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

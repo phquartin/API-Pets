@@ -1,7 +1,7 @@
-package com.petsapi.dto.pet;
+package com.petsapi.local.dto.pet;
 
-import com.petsapi.model.pet.PetSexo;
-import com.petsapi.model.pet.PetTipo;
+import com.petsapi.local.model.pet.PetSexo;
+import com.petsapi.local.model.pet.PetTipo;
 
 public class PetResponseDTO {
 

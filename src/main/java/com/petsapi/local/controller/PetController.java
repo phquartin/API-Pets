@@ -1,8 +1,8 @@
-package com.petsapi.controller;
+package com.petsapi.local.controller;
 
-import com.petsapi.dto.pet.PetDTO;
-import com.petsapi.dto.pet.PetResponseDTO;
-import com.petsapi.service.PetService;
+import com.petsapi.local.dto.pet.PetDTO;
+import com.petsapi.local.dto.pet.PetResponseDTO;
+import com.petsapi.local.service.PetService;
 import jakarta.validation.Valid;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -33,6 +33,10 @@ public class PetController {
     @GetMapping("/id/{id}")
     public PetResponseDTO getPetById(@PathVariable Long id) {
         return petService.getById(id);
+    }
+    @GetMapping("/name/{name}")
+    public List<PetResponseDTO> getByName(@PathVariable String name) {
+        return petService.getByName(name);
     }
 
     @DeleteMapping("/delete/{id}")

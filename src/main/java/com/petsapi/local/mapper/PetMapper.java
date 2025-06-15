@@ -1,8 +1,8 @@
-package com.petsapi.mapper;
+package com.petsapi.local.mapper;
 
-import com.petsapi.dto.pet.PetDTO;
-import com.petsapi.dto.pet.PetResponseDTO;
-import com.petsapi.model.pet.PetModel;
+import com.petsapi.local.dto.pet.PetDTO;
+import com.petsapi.local.dto.pet.PetResponseDTO;
+import com.petsapi.local.model.pet.PetModel;
 import org.springframework.stereotype.Component;
 
 

@@ -1,40 +1,53 @@
-package com.petsapi.dto.pet;
+package com.petsapi.local.model.pet;
 
-import com.petsapi.model.pet.PetSexo;
-import com.petsapi.model.pet.PetTipo;
-import jakarta.validation.constraints.*;
+import jakarta.persistence.*;
 
-public class PetDTO {
+@Entity
+@Table(name = "Pets")
+public class PetModel {
 
-    @Size(min = 2, max = 50, message = "O nome deve ter entre 2 e 50 caracteres.")
-    @Pattern(regexp = "^[a-zA-Z\\s]*$", message = "O nome deve conter apenas letras e espaços.")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String nome;
 
-    @Size(max = 50, message = "O sobrenome deve ter no máximo 50 caracteres.")
-    @Pattern(regexp = "^[a-zA-Z\\s]*$", message = "O sobrenome deve conter apenas letras e espaços.") // O '*' permite que seja vazio
     private String sobrenome;
 
-    @NotNull(message = "O tipo do pet deve ser informado.")
+    @Enumerated(EnumType.STRING)
     private PetTipo tipo;
 
-    @NotNull(message = "O sexo do pet deve ser informado.")
+    @Enumerated(EnumType.STRING)
     private PetSexo sexo;
 
-    @Min(value = 0, message = "A idade não pode ser negativa.")
-    @Max(value = 20, message = "A idade máxima permitida é 20 anos.")
     private int idade;
 
-    @Positive(message = "O peso deve ser um valor positivo.")
     private double peso;
 
-    @Size(max = 255, message = "O endereço deve ter no máximo 255 caracteres.")
     private String endereco;
 
-    @NotBlank(message = "A raça não pode estar em branco.")
-    @Size(min = 2, max = 50, message = "A raça deve ter entre 2 e 50 caracteres.")
     private String raca;
 
-    // Getters e Setters
+    public PetModel(long id, String nome, String sobrenome, PetTipo tipo, PetSexo sexo, int idade, double peso, String endereco, String raca) {
+        this.id = id;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.tipo = tipo;
+        this.sexo = sexo;
+        this.idade = idade;
+        this.peso = peso;
+        this.endereco = endereco;
+        this.raca = raca;
+    }
+    public PetModel() {}
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -99,5 +112,4 @@ public class PetDTO {
     public void setRaca(String raca) {
         this.raca = raca;
     }
-
 }

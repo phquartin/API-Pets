@@ -1,11 +1,11 @@
-package com.petsapi.service;
+package com.petsapi.local.service;
 
-import com.petsapi.dto.pet.PetDTO;
-import com.petsapi.dto.pet.PetResponseDTO;
-import com.petsapi.mapper.PetMapper;
-import com.petsapi.model.pet.PetModel;
-import com.petsapi.repository.PetRepository;
-import com.petsapi.validator.pet.PetException;
+import com.petsapi.local.dto.pet.PetDTO;
+import com.petsapi.local.dto.pet.PetResponseDTO;
+import com.petsapi.local.mapper.PetMapper;
+import com.petsapi.local.model.pet.PetModel;
+import com.petsapi.local.repository.PetRepository;
+import com.petsapi.local.validator.pet.PetException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,6 +33,10 @@ public class PetService {
     public List<PetResponseDTO> getAll() {
         List<PetModel> list = petRepository.findAll();
         return list.stream().map(petMapper::toResponseDTO).collect(Collectors.toList());
+    }
+    public List<PetResponseDTO> getByName(String name) {
+        List<PetModel> byName = petRepository.getByNomeContaining(name);
+        return byName.stream().map(petMapper::toResponseDTO).collect(Collectors.toList());
     }
 
     public void delete(Long id) {

@@ -1,6 +1,6 @@
-package com.petsapi.repository;
+package com.petsapi.local.repository;
 
-import com.petsapi.model.pergunta.PerguntaModel;
+import com.petsapi.local.model.pergunta.PerguntaModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
