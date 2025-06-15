@@ -35,4 +35,9 @@ public class PetService {
         return list.stream().map(petMapper::toResponseDTO).collect(Collectors.toList());
     }
 
+    public void delete(Long id) {
+        getById(id);
+        petRepository.deleteById(id);
+    }
+
 }
