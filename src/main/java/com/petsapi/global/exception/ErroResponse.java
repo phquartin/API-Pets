@@ -1,8 +1,11 @@
 package com.petsapi.global.exception;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.regex.Pattern;
 
 public class ErroResponse {
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
     private int status;
     private String message;
     private LocalDateTime timestamp;
@@ -13,6 +16,16 @@ public class ErroResponse {
         this.message = message;
         this.timestamp = timestamp;
         this.path = path;
+    }
+
+    @Override
+    public String toString() {
+        return "ErroResponse{" +
+                "status=" + status +
+                ", message='" + message + '\'' +
+                ", timestamp=" + timestamp.format(formatter) +
+                ", path='" + path + '\'' +
+                "}";
     }
 
     public int getStatus() {
